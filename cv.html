@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safeek Mohammed Shahad — Curriculum Vitae</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    /* ======== PRINT STYLES ======== */
+    @media print {
+      body { background: white !important; color: black !important; }
+      .no-print { display: none !important; }
+      .cv-wrapper { box-shadow: none !important; margin: 0 !important; max-width: 100% !important; }
+      a { color: #0056cc !important; }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0f1e;
+      font-family: 'Rajdhani', sans-serif;
+      color: #1a1a2e;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    /* Print button bar */
+    .no-print {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .print-btn {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: linear-gradient(135deg, #00f0ff, #bf00ff);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 2px;
+      box-shadow: 0 0 20px rgba(0,240,255,0.4);
+      transition: all 0.2s;
+    }
+    .print-btn:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(0,240,255,0.6); }
+    .back-btn {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: transparent;
+      color: #00f0ff;
+      border: 1px solid #00f0ff;
+      padding: 12px 24px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 2px;
+      text-decoration: none;
+      margin-right: 1rem;
+      transition: all 0.2s;
+    }
+    .back-btn:hover { background: rgba(0,240,255,0.1); }
+
+    /* CV Paper */
+    .cv-wrapper {
+      background: #ffffff;
+      max-width: 850px;
+      margin: 0 auto;
+      box-shadow: 0 0 60px rgba(0,0,0,0.8);
+    }
+
+    /* Header */
+    .cv-header {
+      background: linear-gradient(135deg, #0a0f1e 0%, #0d1b3e 60%, #1a0838 100%);
+      color: #fff;
+      padding: 3rem 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cv-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00f0ff, #bf00ff, #00ff41);
+    }
+    .cv-header-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .cv-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 3px;
+      line-height: 1.1;
+    }
+    .cv-name span { color: #00f0ff; }
+    .cv-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      color: rgba(0,240,255,0.8);
+      letter-spacing: 2px;
+      margin-top: 0.75rem;
+    }
+    .cv-title-line { margin-bottom: 0.2rem; }
+    .cv-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 3px solid #00f0ff;
+      box-shadow: 0 0 25px rgba(0,240,255,0.5), 0 0 50px rgba(0,240,255,0.2);
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .cv-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .cv-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+    .cv-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .cv-contact-item a { color: #00f0ff; text-decoration: none; }
+
+    /* Body */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      min-height: 600px;
+    }
+
+    /* Sidebar */
+    .cv-sidebar {
+      background: #f0f4f8;
+      padding: 2rem 1.5rem;
+      border-right: 3px solid #e2e8f0;
+    }
+    .cv-main {
+      padding: 2rem 2.5rem;
+    }
+
+    /* Sections */
+    .cv-section { margin-bottom: 2rem; }
+
+    .cv-section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #0d1b3e;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #00f0ff;
+      margin-bottom: 1rem;
+    }
+
+    /* Skills */
+    .skill-row { margin-bottom: 0.75rem; }
+    .skill-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 3px;
+    }
+    .skill-bar {
+      height: 5px;
+      background: #dde1e7;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+    .sf-blue { background: linear-gradient(90deg, #00f0ff, #0056cc); }
+    .sf-purple { background: linear-gradient(90deg, #bf00ff, #6600cc); }
+    .sf-green { background: linear-gradient(90deg, #00cc44, #00ff41); }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cv-tag {
+      font-size: 0.65rem;
+      font-family: 'Share Tech Mono', monospace;
+      background: #0d1b3e;
+      color: #00f0ff;
+      padding: 3px 9px;
+      border-radius: 2px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Timeline items */
+    .timeline-item { margin-bottom: 1.5rem; padding-left: 1.2rem; border-left: 2px solid #00f0ff; }
+    .tl-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: #bf00ff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .tl-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0d1b3e;
+      margin: 0.1rem 0;
+    }
+    .tl-sub {
+      font-size: 0.8rem;
+      color: #4a5568;
+    }
+    .tl-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-family: 'Share Tech Mono', monospace;
+      color: #00aa22;
+      border: 1px solid #00aa22;
+      padding: 1px 7px;
+      border-radius: 2px;
+      margin-top: 4px;
+    }
+    .tl-badge.inprog { color: #cc8800; border-color: #cc8800; }
+
+    /* Bullet lists */
+    .cv-list { list-style: none; padding: 0; }
+    .cv-list li {
+      font-size: 0.85rem;
+      color: #2d3748;
+      padding: 0.25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .cv-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #00f0ff;
+    }
+
+    /* About paragraph */
+    .cv-about p {
+      font-size: 0.88rem;
+      color: #2d3748;
+      line-height: 1.7;
+    }
+
+    /* Cert cards */
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid #bf00ff;
+      border-radius: 2px;
+    }
+    .cert-icon-sm { font-size: 1.4rem; flex-shrink: 0; }
+    .cert-item-title { font-size: 0.85rem; font-weight: 700; color: #0d1b3e; }
+    .cert-item-sub { font-size: 0.75rem; color: #718096; }
+    .cert-verified { font-size: 0.6rem; color: #00aa22; font-family: 'Share Tech Mono', monospace; }
+
+    /* Languages in sidebar */
+    .lang-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.6rem;
+      font-size: 0.82rem;
+    }
+    .lang-flag-sm { font-size: 1.1rem; }
+    .lang-dots { display: flex; gap: 3px; margin-left: auto; }
+    .lang-dot { width: 8px; height: 8px; border-radius: 50%; background: #dde1e7; }
+    .lang-dot.filled { background: #00f0ff; }
+
+    /* Footer */
+    .cv-footer {
+      background: #0a0f1e;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 1rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+    }
+
+    /* Page break control */
+    .page-break { page-break-before: always; }
+  </style>
+</head>
+<body>
+
+  <!-- Print Controls (not printed) -->
+  <div class="no-print">
+    <a href="index.html" class="back-btn">← BACK TO PORTFOLIO</a>
+    <button class="print-btn" onclick="window.print()">🖨 PRINT / SAVE AS PDF</button>
+    <p style="margin-top:0.75rem;font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:rgba(0,240,255,0.6);">
+      TIP: In print dialog → Destination → Save as PDF → Save
+    </p>
+  </div>
+
+  <!-- CV Paper -->
+  <div class="cv-wrapper">
+
+    <!-- ===== HEADER ===== -->
+    <div class="cv-header">
+      <div class="cv-header-grid">
+        <div>
+          <div class="cv-name">MOHAMED. <span>SHAHAD</span></div>
+          <div class="cv-title">
+            <div class="cv-title-line">// ICT PROFESSIONAL</div>
+            <div class="cv-title-line">// WEB DEVELOPER</div>
+            <div class="cv-title-line">// NETWORKING &amp; CYBERSECURITY STUDENT</div>
+          </div>
+          <div class="cv-contacts">
+            <span class="cv-contact-item">📧 <a href="mailto:shahadsha1000@gmail.com">shahadsha1000@gmail.com</a></span>
+            <span class="cv-contact-item">📱 +94 75 638 6914</span>
+            <span class="cv-contact-item">📍 Katugastota, Kandy, Sri Lanka</span>
+            <span class="cv-contact-item">💼 <a href="https://linkedin.com" target="_blank">linkedin.com/in/safeek-shahad</a></span>
+            <span class="cv-contact-item">⚡ <a href="https://github.com" target="_blank">github.com/safeek-shahad</a></span>
+          </div>
+        </div>
+        <div class="cv-avatar">
+          <img src="../assets/SHAHAD.PNG" alt="Safeek Mohammed Shahad" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BODY ===== -->
+    <div class="cv-body">
+
+      <!-- ===== SIDEBAR ===== -->
+      <div class="cv-sidebar">
+
+        <!-- Technical Skills -->
+        <div class="cv-section">
+          <div class="cv-section-title">Technical Skills</div>
+          <div class="skill-row">
+            <div class="skill-label">HTML5 / CSS3</div>
+            <div class="skill-bar"><div class="skill-fill sf-blue" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label">JavaScript</div>
+            <div class="skill-bar"><div class="skill-fill sf-blue" style="width:78%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label">Web Development</div>
+            <div class="skill-bar"><div class="skill-fill sf-blue" style="width:85%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label">Networking</div>
+            <div class="skill-bar"><div class="skill-fill sf-purple" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label">Cybersecurity</div>
+            <div class="skill-bar"><div class="skill-fill sf-purple" style="width:75%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label">Troubleshooting</div>
+            <div class="skill-bar"><div class="skill-fill sf-green" style="width:88%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label">Bug Fixing</div>
+            <div class="skill-bar"><div class="skill-fill sf-green" style="width:85%"></div></div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="cv-section">
+          <div class="cv-section-title">Tech Stack</div>
+          <div class="tag-list">
+            <span class="cv-tag">HTML5</span>
+            <span class="cv-tag">CSS3</span>
+            <span class="cv-tag">JavaScript</span>
+            <span class="cv-tag">Bootstrap</span>
+            <span class="cv-tag">Git</span>
+            <span class="cv-tag">TCP/IP</span>
+            <span class="cv-tag">DNS/DHCP</span>
+            <span class="cv-tag">Firewalls</span>
+            <span class="cv-tag">Linux CLI</span>
+            <span class="cv-tag">Wireshark</span>
+          </div>
+        </div>
+
+        <!-- Professional Skills -->
+        <div class="cv-section">
+          <div class="cv-section-title">Professional Skills</div>
+          <ul class="cv-list">
+            <li>Problem Solving</li>
+            <li>Communication</li>
+            <li>Leadership</li>
+            <li>Teamwork & Collaboration</li>
+            <li>Creativity</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+
+        <!-- Languages -->
+        <div class="cv-section">
+          <div class="cv-section-title">Languages</div>
+          <div class="lang-row">
+            <span class="lang-flag-sm">🇬🇧</span>
+            <span style="font-size:0.82rem;font-weight:600;">English</span>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            </div>
+          </div>
+          <div class="lang-row">
+            <span class="lang-flag-sm">🇱🇰</span>
+            <span style="font-size:0.82rem;font-weight:600;">Sinhala</span>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            </div>
+          </div>
+          <div class="lang-row">
+            <span class="lang-flag-sm">🇮🇳</span>
+            <span style="font-size:0.82rem;font-weight:600;">Tamil</span>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot"></div><div class="lang-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="cv-section">
+          <div class="cv-section-title">Interests</div>
+          <ul class="cv-list">
+            <li>Ethical Hacking</li>
+            <li>Network Architecture</li>
+            <li>Web Development</li>
+            <li>Cybersecurity Research</li>
+            <li>Open Source Projects</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <div class="cv-main">
+
+        <!-- About -->
+        <div class="cv-section cv-about">
+          <div class="cv-section-title">Professional Profile</div>
+          <p>
+            Dedicated ICT professional with strong knowledge in information technology, networking, and cybersecurity.
+            Currently pursuing a Degree in Networking &amp; Cybersecurity while holding an <strong>OTHM Level 3 Diploma in IT</strong> (UK RQF Level 3).
+            Experienced in building responsive websites, troubleshooting complex systems, fixing software bugs, and delivering practical technical solutions.
+            Passionate about securing digital infrastructure and continuously expanding technical expertise.
+          </p>
+          <p style="margin-top:0.75rem;">
+            Seeking full-time opportunities in IT support, web development, or cybersecurity — particularly with forward-thinking organisations in Dubai and the UAE.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+          <div class="cv-section-title">Education</div>
+          <div class="timeline-item">
+            <div class="tl-date">Current — Present</div>
+            <div class="tl-title">Degree in Networking &amp; Cybersecurity</div>
+            <div class="tl-sub">Undergraduate Programme</div>
+            <span class="tl-badge inprog">IN PROGRESS</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">Completed</div>
+            <div class="tl-title">OTHM Level 3 Diploma in Information Technology</div>
+            <div class="tl-sub">OTHM Qualifications, UK — RQF Level 3 Equivalent</div>
+            <span class="tl-badge">CERTIFIED ✓</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">Completed</div>
+            <div class="tl-title">GCE Advanced Level</div>
+            <div class="tl-sub">Commerce Stream</div>
+            <span class="tl-badge">PASSED ✓</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">Completed</div>
+            <div class="tl-title">GCE Ordinary Level</div>
+            <div class="tl-sub">English Medium</div>
+            <span class="tl-badge">PASSED ✓</span>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="cv-section">
+          <div class="cv-section-title">Work Experience</div>
+          <div class="timeline-item">
+            <div class="tl-date">Ongoing — Freelance / Remote</div>
+            <div class="tl-title">Part-Time Web Developer</div>
+            <div class="tl-sub">Self-Employed | Sri Lanka</div>
+            <ul class="cv-list" style="margin-top:0.5rem;">
+              <li>Designed and developed dynamic, responsive websites for diverse clients</li>
+              <li>Identified, debugged, and resolved frontend and backend software bugs</li>
+              <li>Maintained, updated, and optimised existing web applications</li>
+              <li>Performed technical troubleshooting for IT systems and devices</li>
+              <li>Collaborated with clients to deliver bespoke digital solutions on time</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cv-section">
+          <div class="cv-section-title">Certifications &amp; Credentials</div>
+          <div class="cert-item">
+            <span class="cert-icon-sm">🏆</span>
+            <div>
+              <div class="cert-item-title">OTHM Level 3 Diploma in Information Technology</div>
+              <div class="cert-item-sub">OTHM Qualifications — United Kingdom | UK RQF Level 3 Equivalent</div>
+              <div class="cert-verified">✓ VERIFIED &amp; ACCREDITED</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon-sm">🎖️</span>
+            <div>
+              <div class="cert-item-title">NVQ Level 3 — Information &amp; Communication Technology</div>
+              <div class="cert-item-sub">TVEC — Tertiary &amp; Vocational Education Commission, Sri Lanka</div>
+              <div class="cert-verified">✓ VERIFIED &amp; ACCREDITED</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="cv-section">
+          <div class="cv-section-title">Key Projects</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+            <div style="padding:0.75rem;border:1px solid #e2e8f0;border-top:2px solid #00f0ff;border-radius:2px;">
+              <div style="font-weight:700;font-size:0.83rem;color:#0d1b3e;">Cyber Command Dashboard</div>
+              <div style="font-size:0.75rem;color:#718096;">Real-time security monitoring UI with live graphs</div>
+            </div>
+            <div style="padding:0.75rem;border:1px solid #e2e8f0;border-top:2px solid #bf00ff;border-radius:2px;">
+              <div style="font-weight:700;font-size:0.83rem;color:#0d1b3e;">Network Topology Mapper</div>
+              <div style="font-size:0.75rem;color:#718096;">Interactive viz tool for network mapping</div>
+            </div>
+            <div style="padding:0.75rem;border:1px solid #e2e8f0;border-top:2px solid #00cc44;border-radius:2px;">
+              <div style="font-weight:700;font-size:0.83rem;color:#0d1b3e;">Secure Portfolio CMS</div>
+              <div style="font-size:0.75rem;color:#718096;">Role-based CMS with encryption & audit logs</div>
+            </div>
+            <div style="padding:0.75rem;border:1px solid #e2e8f0;border-top:2px solid #00f0ff;border-radius:2px;">
+              <div style="font-weight:700;font-size:0.83rem;color:#0d1b3e;">E-Commerce Web Platform</div>
+              <div style="font-size:0.75rem;color:#718096;">Fully responsive online store with cart system</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="cv-footer">
+      SAFEEK MOHAMMED SHAHAD &nbsp;|&nbsp; ICT PROFESSIONAL &nbsp;|&nbsp; KANDY, SRI LANKA &nbsp;|&nbsp; 2025
+    </div>
+  </div>
+
+</body>
+</html>
