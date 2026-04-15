@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Safeek Mohammed Shahad - ICT Professional, Web Developer & Networking/Cybersecurity Student based in Sri Lanka. Futuristic portfolio showcasing technical skills, projects, and experience." />
+  <meta name="keywords"
+    content="ICT professional, cybersecurity student, web developer portfolio, Sri Lanka, Dubai technology jobs, networking specialist, HTML CSS JavaScript" />
+  <meta name="author" content="Safeek Mohammed Shahad" />
+  <meta property="og:title" content="Safeek M. Shahad | Cyber Portfolio" />
+  <meta property="og:description"
+    content="Futuristic cybersecurity-themed portfolio for Safeek Mohammed Shahad — ICT Professional & Web Developer." />
+  <meta property="og:type" content="website" />
+  <title>Safeek M. Shahad | Cyber Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Visual Enhancements -->
+  <link rel="stylesheet" href="enhancements.css" />
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div id="loading-screen">
+    <div class="loading-logo">S.M.S // CYBER_OS</div>
+    <div class="loading-bar-wrapper">
+      <div class="loading-bar-fill"></div>
+    </div>
+    <div class="loading-status" id="loading-status">INITIALIZING SECURE CONNECTION...</div>
+    <div id="init-button-container" style="display: none; margin-top: 2rem; text-align: center;">
+      <button id="btn-initialize" class="btn-primary" style="padding: 15px 40px; font-size: 0.9rem;">
+        ▶ INITIALIZE SYSTEM
+      </button>
+      <div style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--neon-blue); letter-spacing: 2px; opacity: 0.7;">
+        [ USER INTERACTION REQUIRED FOR VOICE SYNTHESIS ]
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ============ SCAN LINES ============ -->
+  <div class="scanlines"></div>
+
+  <!-- ============ MATRIX RAIN ============ -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- ============ GRID BACKGROUND ============ -->
+  <div class="grid-bg"></div>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-bracket">[</span>SMS<span class="nav-logo-bracket">]</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" id="nav-about">About</a></li>
+      <li><a href="#skills" id="nav-skills">Skills</a></li>
+      <li><a href="#education" id="nav-education">Education</a></li>
+      <li><a href="#projects" id="nav-projects">Projects</a></li>
+      <li><a href="#experience" id="nav-experience">Experience</a></li>
+      <li><a href="#certifications" id="nav-certs">Certs</a></li>
+      <li><a href="#github-section" id="nav-github">GitHub</a></li>
+      <li><a href="#contact" id="nav-contact">Contact</a></li>
+      <li><a href="#terminal-section" id="nav-terminal">Terminal</a></li>
+    </ul>
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      <span>SYSTEM ONLINE</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-layout">
+      <!-- LEFT: Text Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          AVAILABLE FOR OPPORTUNITIES
+        </div>
+        <h1 class="hero-name">
+          <span class="first-name">MOHAMED</span>
+          <span class="last-name glitch" data-text="SHAHAD">SHAHAD</span>
+        </h1>
+        <div class="hero-title-wrapper">
+          <span id="typing-text"></span><span class="typing-cursor"></span>
+        </div>
+        <p class="hero-desc">
+          Dedicated ICT Professional building secure digital futures. Passionate about networking, cybersecurity, and web development.
+        </p>
+        <div class="hero-buttons">
+          <a href="assets/cv.html" class="btn-primary" target="_blank" id="btn-download-cv">
+            ⬇ Download CV
+          </a>
+          <a href="#projects" class="btn-secondary" id="btn-view-projects">
+            ◈ View Projects
+          </a>
+          <a href="#contact" class="btn-ghost" id="btn-contact">
+            ✉ Contact Me
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Years Coding</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="10">0</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="2">0</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Languages</span>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: Profile Photo -->
+      <div class="hero-photo-col">
+        <div class="hero-photo-frame">
+          <div class="hero-photo-rings">
+            <div class="hero-ring h-ring-1"></div>
+            <div class="hero-ring h-ring-2"></div>
+            <div class="hero-ring h-ring-3"></div>
+          </div>
+          <div class="hero-photo-img">
+            <img src="assets/SHAHAD.PNG" alt="Safeek Mohammed Shahad" />
+          </div>
+          <div class="hero-photo-badge">
+            <span class="status-dot" style="width:7px;height:7px;"></span>
+            ICT PROFESSIONAL
+          </div>
+          <!-- Corner decorations -->
+          <div class="hero-corner tl"></div>
+          <div class="hero-corner tr"></div>
+          <div class="hero-corner bl"></div>
+          <div class="hero-corner br"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// ABOUT ME</div>
+        <h2 class="section-title">AGENT <span class="highlight">PROFILE</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar-wrapper reveal">
+          <div class="about-avatar-frame">
+            <div class="avatar-rings">
+              <div class="avatar-ring ring-1"></div>
+              <div class="avatar-ring ring-2"></div>
+              <div class="avatar-ring ring-3"></div>
+            </div>
+            <div class="avatar-img">
+              <img src="assets/SHAHAD.PNG" alt="Safeek Mohammed Shahad" />
+            </div>
+            <div class="avatar-status-badge">
+              <div class="status-dot"></div>
+              OPEN TO WORK
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p style="font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1.5rem;">
+            Dedicated <strong style="color:var(--neon-blue)">ICT Professional</strong> with strong knowledge in
+            information technology, networking, and cybersecurity. Currently pursuing a <strong
+              style="color:var(--neon-blue)">Degree in Networking & Cybersecurity</strong> while holding an <strong
+              style="color:var(--neon-blue)">OTHM Level 3 Diploma in IT</strong>.
+          </p>
+          <p style="font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:2rem;">
+            Experienced in building websites, troubleshooting complex systems, fixing bugs, and delivering practical
+            solutions to real-world technical problems. Seeking opportunities to apply my skills in a dynamic,
+            forward-thinking environment.
+          </p>
+          <div class="about-info-cards">
+            <div class="info-card">
+              <span class="info-card-icon">📍</span>
+              <div>
+                <div class="info-card-label">Location</div>
+                <div class="info-card-value">Katugastota, Kandy, Sri Lanka</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">📧</span>
+              <div>
+                <div class="info-card-label">Email</div>
+                <div class="info-card-value">shahadsha1000@gmail.com</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">📱</span>
+              <div>
+                <div class="info-card-label">Phone</div>
+                <div class="info-card-value">+94 75 638 6914</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">🎓</span>
+              <div>
+                <div class="info-card-label">Status</div>
+                <div class="info-card-value">Studying Networking & Cybersecurity</div>
+              </div>
+            </div>
+          </div>
+          <!-- Language Badges -->
+          <div style="margin-top:2rem;">
+            <div
+              style="font-family:var(--font-mono);font-size:0.65rem;color:var(--neon-blue);letter-spacing:2px;margin-bottom:1rem;text-transform:uppercase;">
+              Languages Spoken</div>
+            <div class="lang-badges">
+              <div class="lang-badge"><span class="lang-flag">🇬🇧</span>
+                <div>
+                  <div class="lang-name">English</div>
+                  <div class="lang-level">Proficient</div>
+                </div>
+              </div>
+              <div class="lang-badge"><span class="lang-flag">🇱🇰</span>
+                <div>
+                  <div class="lang-name">Sinhala</div>
+                  <div class="lang-level">Native</div>
+                </div>
+              </div>
+              <div class="lang-badge"><span class="lang-flag">🇮🇳</span>
+                <div>
+                  <div class="lang-name">Tamil</div>
+                  <div class="lang-level">Conversational</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// CAPABILITIES</div>
+        <h2 class="section-title">SKILL <span class="highlight">MATRIX</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- DNA Visualization Canvas -->
+      <div class="reveal" style="margin-bottom:3rem;">
+        <canvas id="dna-canvas"></canvas>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Technical Skills -->
+        <div class="glass-card reveal">
+          <div class="skill-category-title">Technical Skills</div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Web Development</span><span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">HTML / CSS</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="90%"
+                style="background:linear-gradient(90deg,var(--neon-green),var(--neon-blue))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">JavaScript</span><span class="skill-pct">78%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="78%"
+                style="background:linear-gradient(90deg,var(--neon-purple),var(--neon-blue))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Networking Fundamentals</span><span
+                class="skill-pct">80%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="80%"
+                style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Cybersecurity Basics</span><span
+                class="skill-pct">75%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="75%"
+                style="background:linear-gradient(90deg,var(--neon-green),var(--neon-purple))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">System Troubleshooting</span><span
+                class="skill-pct">88%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Bug Fixing</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="85%"
+                style="background:linear-gradient(90deg,var(--neon-purple),var(--neon-green))"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Professional Skills -->
+        <div class="glass-card reveal">
+          <div class="skill-category-title">Professional Skills</div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Communication</span><span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="90%"
+                style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-green))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Problem Solving</span><span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Leadership</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="80%"
+                style="background:linear-gradient(90deg,var(--neon-purple),var(--neon-blue))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Creativity</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="88%"
+                style="background:linear-gradient(90deg,var(--neon-green),var(--neon-purple))"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Teamwork</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Time Management</span><span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="85%"
+                style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple))"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Tags -->
+      <div class="reveal" style="margin-top:2rem;">
+        <div class="skill-tags">
+          <span class="skill-tag tag-blue">HTML5</span>
+          <span class="skill-tag tag-blue">CSS3</span>
+          <span class="skill-tag tag-blue">JavaScript</span>
+          <span class="skill-tag tag-blue">Bootstrap</span>
+          <span class="skill-tag tag-green">TCP/IP</span>
+          <span class="skill-tag tag-green">DNS</span>
+          <span class="skill-tag tag-green">DHCP</span>
+          <span class="skill-tag tag-green">Firewalls</span>
+          <span class="skill-tag tag-purple">Penetration Testing</span>
+          <span class="skill-tag tag-purple">Network Security</span>
+          <span class="skill-tag tag-purple">Ethical Hacking</span>
+          <span class="skill-tag tag-blue">Git</span>
+          <span class="skill-tag tag-blue">VS Code</span>
+          <span class="skill-tag tag-green">Linux CLI</span>
+          <span class="skill-tag tag-purple">Wireshark</span>
+          <span class="skill-tag tag-blue">Responsive Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION SECTION ============ -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// DATA LOGS</div>
+        <h2 class="section-title">EDUCATION <span class="highlight">TIMELINE</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="timeline-year">CURRENT</div>
+              <div class="timeline-institution">Networking & Cybersecurity</div>
+              <div class="timeline-degree">Degree Programme — Ongoing</div>
+              <span class="timeline-badge">IN PROGRESS</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="timeline-year">COMPLETED</div>
+              <div class="timeline-institution">OTHM Level 3 Diploma</div>
+              <div class="timeline-degree">Information Technology — UK RQF Level 3</div>
+              <span class="timeline-badge">CERTIFIED</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="timeline-year">COMPLETED</div>
+              <div class="timeline-institution">GCE Advanced Level</div>
+              <div class="timeline-degree">Commerce Stream</div>
+              <span class="timeline-badge">PASSED</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="timeline-year">COMPLETED</div>
+              <div class="timeline-institution">GCE Ordinary Level</div>
+              <div class="timeline-degree">English Medium</div>
+              <span class="timeline-badge">PASSED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// OPERATIONS</div>
+        <h2 class="section-title">PROJECT <span class="highlight">VAULT</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Projects will be rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE SECTION ============ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// FIELD RECORD</div>
+        <h2 class="section-title">WORK <span class="highlight">EXPERIENCE</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="max-width:800px;margin:0 auto;border-left:2px solid var(--glass-border);padding-left:2rem;">
+        <div class="experience-card reveal">
+          <div class="exp-company">Freelance / Part-Time</div>
+          <div class="exp-role">Web Developer</div>
+          <div class="exp-period">⏱ Ongoing | Remote & On-Site, Sri Lanka</div>
+          <ul class="exp-duties">
+            <li>Designing and developing dynamic, responsive websites for clients</li>
+            <li>Identifying, debugging, and fixing frontend and backend bugs</li>
+            <li>Maintaining and updating existing web applications</li>
+            <li>Troubleshooting technical systems and resolving IT issues</li>
+            <li>Collaborating with clients to deliver tailored digital solutions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS SECTION ============ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// CLEARANCE LEVEL</div>
+        <h2 class="section-title">CERTIFICATIONS <span class="highlight">&amp; CREDENTIALS</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card holo-card reveal">
+          <span class="cert-icon">🏆</span>
+          <div class="cert-name">OTHM Level 3 Diploma in IT</div>
+          <div class="cert-issuer">OTHM Qualifications — UK</div>
+          <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.75rem;">UK Regulated Qualifications
+            Framework (RQF) Level 3 equivalent. Covering core IT principles and applications.</p>
+          <span class="cert-stamp">✓ Verified</span>
+        </div>
+        <div class="cert-card holo-card reveal">
+          <span class="cert-icon">🎖️</span>
+          <div class="cert-name">NVQ Level 3 — ICT</div>
+          <div class="cert-issuer">Tertiary & Vocational Education Commission</div>
+          <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.75rem;">National Vocational Qualification
+            in Information & Communication Technology, endorsed by national authorities.</p>
+          <span class="cert-stamp">✓ Verified</span>
+        </div>
+        <div class="cert-card holo-card reveal">
+          <span class="cert-icon">🛡️</span>
+          <div class="cert-name">Networking & Cybersecurity</div>
+          <div class="cert-issuer">Degree Programme (In Progress)</div>
+          <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.75rem;">Currently enrolled in a
+            comprehensive degree covering network architecture, cybersecurity principles, and ethical hacking.</p>
+          <span class="cert-stamp" style="color:#ffcc00;border-color:rgba(255,204,0,0.4);">IN PROGRESS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CYBER DASHBOARD SECTION ============ -->
+  <section id="cyber-dashboard">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// SYSTEM MONITOR</div>
+        <h2 class="section-title">CYBER <span class="highlight">DASHBOARD</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="dashboard-grid reveal">
+        <!-- Network Activity Panel -->
+        <div class="dash-panel">
+          <div class="dash-panel-title">Network Activity</div>
+          <div class="network-bars" id="network-bars"></div>
+          <div style="margin-top:1rem;">
+            <canvas id="net-chart" height="80"></canvas>
+          </div>
+        </div>
+
+        <!-- Live Log Feed -->
+        <div class="dash-panel">
+          <div class="dash-panel-title">Live System Logs</div>
+          <div class="log-feed" id="log-feed"></div>
+        </div>
+
+        <!-- Security Indicators -->
+        <div class="dash-panel">
+          <div class="dash-panel-title">Security Status</div>
+          <div class="security-indicators">
+            <div class="sec-indicator">
+              <span class="sec-label">Firewall</span>
+              <div class="sec-bar">
+                <div class="sec-fill green" style="width:98%"></div>
+              </div>
+              <span class="sec-value">98%</span>
+            </div>
+            <div class="sec-indicator">
+              <span class="sec-label">Encryption</span>
+              <div class="sec-bar">
+                <div class="sec-fill blue" style="width:100%"></div>
+              </div>
+              <span class="sec-value">100%</span>
+            </div>
+            <div class="sec-indicator">
+              <span class="sec-label">Intrusion Det.</span>
+              <div class="sec-bar">
+                <div class="sec-fill green" style="width:95%"></div>
+              </div>
+              <span class="sec-value">95%</span>
+            </div>
+            <div class="sec-indicator">
+              <span class="sec-label">System Integrity</span>
+              <div class="sec-bar">
+                <div class="sec-fill blue" style="width:99%"></div>
+              </div>
+              <span class="sec-value">99%</span>
+            </div>
+            <div class="sec-indicator">
+              <span class="sec-label">Threat Level</span>
+              <div class="sec-bar">
+                <div class="sec-fill yellow" style="width:12%"></div>
+              </div>
+              <span class="sec-value" style="color:#ffcc00">LOW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attack Map -->
+      <div class="dash-panel reveal" style="margin-top:1.5rem;">
+        <div class="dash-panel-title">Global Cyber Attack Simulation Map</div>
+        <div class="attack-map">
+          <canvas id="attack-map-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HACKING SIMULATION SECTION ============ -->
+  <section id="hack-simulation"
+    style="padding:80px 0;background:linear-gradient(180deg,transparent,rgba(0,255,65,0.02),transparent);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// SANDBOX</div>
+        <h2 class="section-title">SECURITY <span class="highlight">SIMULATION</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="reveal" style="max-width:800px;margin:0 auto;">
+        <div class="glass-card" style="padding:0;overflow:hidden;">
+          <div style="display:flex;border-bottom:1px solid var(--glass-border);">
+            <button class="sim-tab active" data-sim="pentest"
+              style="flex:1;padding:1rem;font-family:var(--font-mono);font-size:0.7rem;background:rgba(0,240,255,0.1);border:none;color:var(--neon-blue);cursor:pointer;border-right:1px solid var(--glass-border);letter-spacing:1px;">PENTEST
+              SIM</button>
+            <button class="sim-tab" data-sim="crack"
+              style="flex:1;padding:1rem;font-family:var(--font-mono);font-size:0.7rem;background:transparent;border:none;color:var(--text-muted);cursor:pointer;letter-spacing:1px;">CRACK
+              SIM</button>
+            <button class="sim-tab" data-sim="monitor"
+              style="flex:1;padding:1rem;font-family:var(--font-mono);font-size:0.7rem;background:transparent;border:none;color:var(--text-muted);cursor:pointer;border-left:1px solid var(--glass-border);letter-spacing:1px;">MONITOR
+              SIM</button>
+          </div>
+          <div id="sim-output"
+            style="padding:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--neon-green);min-height:200px;line-height:2;background:#000;overflow:auto;max-height:300px;">
+          </div>
+          <div style="padding:1rem;border-top:1px solid var(--glass-border);display:flex;gap:1rem;">
+            <button id="sim-run" class="btn-primary" style="font-size:0.65rem;padding:8px 20px;"
+              onclick="runSimulation()">▶ RUN SIMULATION</button>
+            <button id="sim-stop" class="btn-secondary" style="font-size:0.65rem;padding:8px 20px;"
+              onclick="stopSimulation()">■ STOP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GITHUB SECTION ============ -->
+  <section id="github-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// CODE VAULT</div>
+        <h2 class="section-title">GITHUB <span class="highlight">REPOSITORIES</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="github-repos-grid reveal" id="github-repos">
+        <div
+          style="grid-column:1/-1;text-align:center;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-muted);padding:3rem;">
+          <span style="display:block;font-size:2rem;margin-bottom:1rem;">⌛</span>
+          LOADING REPOSITORIES...
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;" class="reveal">
+        <a href="https://github.com/" target="_blank" class="btn-ghost" id="github-profile-link">
+          ⬡ View GitHub Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI RECRUITER BOT ============ -->
+  <section id="recruiter-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// AI INTERVIEW</div>
+        <h2 class="section-title">RECRUITER <span class="highlight">BOT</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="recruiter-bot-ui reveal">
+        <div class="recruiter-bot-header">
+          <div class="bot-avatar-large">🤖</div>
+          <div>
+            <h3 style="font-family:var(--font-cyber);color:var(--neon-blue);font-size:0.95rem;">CYBER RECRUITER AI</h3>
+            <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-secondary);margin-top:0.25rem;">Ask
+              me anything about Safeek's qualifications</p>
+            <div
+              style="display:flex;align-items:center;gap:6px;margin-top:0.25rem;font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-green);">
+              <div class="status-dot"></div> ONLINE & READY
+            </div>
+          </div>
+        </div>
+        <div class="recruiter-messages" id="recruiter-messages">
+          <div class="chat-msg">
+            <div class="chatbot-avatar-icon" style="width:32px;height:32px;font-size:0.9rem;flex-shrink:0;">🤖</div>
+            <div class="msg-bubble bot-bubble">Hello! I'm your AI Recruiter Bot. Click any question below to learn about
+              Safeek's strengths and qualifications, or type your own question!</div>
+          </div>
+        </div>
+        <div class="recruiter-controls">
+          <button class="recruiter-btn" onclick="recruiterAsk('strengths')">💪 What are your strengths?</button>
+          <button class="recruiter-btn" onclick="recruiterAsk('hire')">🎯 Why should we hire you?</button>
+          <button class="recruiter-btn" onclick="recruiterAsk('cyber')">🛡️ Cybersecurity skills?</button>
+          <button class="recruiter-btn" onclick="recruiterAsk('goals')">🚀 Career goals?</button>
+          <button class="recruiter-btn" onclick="recruiterAsk('dubai')">🌆 Why Dubai?</button>
+          <button class="recruiter-btn" onclick="recruiterAsk('web')">🌐 Web dev skills?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HACKER TERMINAL SECTION ============ -->
+  <section id="terminal-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// ROOT ACCESS</div>
+        <h2 class="section-title">HACKER <span class="highlight">TERMINAL</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="terminal-window reveal">
+        <div class="terminal-titlebar">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+          <div class="terminal-title">safeek@cybernode:~$</div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-output" id="terminal-output"></div>
+          <div class="terminal-input-line">
+            <span class="terminal-prompt">safeek@cybernode:~$</span>
+            <input type="text" id="terminal-input" placeholder="type 'help' to begin..." autocomplete="off"
+              spellcheck="false" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">// ESTABLISH CONNECTION</div>
+        <h2 class="section-title">CONTACT <span class="highlight">PROTOCOL</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <h3
+            style="font-family:var(--font-cyber);font-size:1rem;color:var(--neon-blue);margin-bottom:1.5rem;letter-spacing:2px;">
+            DIRECT CHANNELS</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📧</div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-value">shahadsha1000@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📱</div>
+            <div>
+              <div class="contact-info-label">Phone / WhatsApp</div>
+              <div class="contact-info-value">+94 75 638 6914</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <div class="contact-info-label">Location</div>
+              <div class="contact-info-value">Katugastota, Kandy, Sri Lanka</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">💼</div>
+            <div>
+              <div class="contact-info-label">LinkedIn</div>
+              <a href="https://linkedin.com" target="_blank"
+                style="color:var(--neon-blue);font-size:0.9rem;text-decoration:none;">linkedin.com/in/safeek-shahad</a>
+            </div>
+          </div>
+          <div
+            style="margin-top:2rem;padding:1.5rem;background:rgba(0,255,65,0.05);border:1px solid rgba(0,255,65,0.2);border-radius:4px;">
+            <div
+              style="font-family:var(--font-mono);font-size:0.65rem;color:var(--neon-green);letter-spacing:2px;margin-bottom:0.5rem;">
+              STATUS</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);">✅ Open to full-time & remote opportunities</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);margin-top:0.25rem;">✅ Available for freelance
+              projects</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);margin-top:0.25rem;">✅ Interested in UAE / Dubai
+              roles</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <h3
+            style="font-family:var(--font-cyber);font-size:1rem;color:var(--neon-blue);margin-bottom:1.5rem;letter-spacing:2px;">
+            SEND A MESSAGE</h3>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Name</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="// Your name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="// Your email" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="// Subject" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Message</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="// Type your message here..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" id="contact-submit" style="width:100%;justify-content:center;">
+              ▶ TRANSMIT MESSAGE
+            </button>
+            <div id="form-status"
+              style="font-family:var(--font-mono);font-size:0.75rem;text-align:center;min-height:24px;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHATBOT WIDGET ============ -->
+  <div id="chatbot-container">
+    <div class="chatbot-window" id="chatbot-window">
+      <div class="chatbot-header">
+        <div class="chatbot-header-info">
+          <div class="chatbot-avatar-icon">🤖</div>
+          <div>
+            <h3>CYBER ASSISTANT</h3>
+            <p><span class="status-dot" style="width:6px;height:6px;"></span> Online &amp; Active</p>
+          </div>
+        </div>
+        <button onclick="toggleChatbot()"
+          style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.2rem;">✕</button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="chat-msg">
+          <div class="chatbot-avatar-icon" style="width:30px;height:30px;font-size:0.8rem;flex-shrink:0;">🤖</div>
+          <div class="msg-bubble bot-bubble">👋 Hello! I'm Safeek's AI assistant. Ask me about skills, projects,
+            education, or experience!</div>
+        </div>
+      </div>
+      <div class="chatbot-suggestions">
+        <span class="chat-suggestion" onclick="chatSend('Tell me about skills')">Skills</span>
+        <span class="chat-suggestion" onclick="chatSend('What projects?')">Projects</span>
+        <span class="chat-suggestion" onclick="chatSend('Education?')">Education</span>
+        <span class="chat-suggestion" onclick="chatSend('Contact info')">Contact</span>
+        <span class="chat-suggestion" onclick="chatSend('Career goals')">Goals</span>
+      </div>
+      <div class="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="Ask me anything..." />
+        <button class="chatbot-send" onclick="chatbotSendMessage()" id="chatbot-send-btn">▶</button>
+      </div>
+    </div>
+    <button class="chatbot-fab" id="chatbot-fab" onclick="toggleChatbot()" title="Chat with AI Assistant">🤖</button>
+  </div>
+
+  <!-- ============ VOICE ASSISTANT ============ -->
+  <button id="voice-fab" onclick="toggleVoice()" title="Voice Assistant">🎤</button>
+  <div id="voice-toast">🎤 Listening...</div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">SMS // CYBER_PORTFOLIO</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="mailto:shahadsha1000@gmail.com" class="social-btn" title="Email">📧</a>
+        <a href="tel:+94756386914" class="social-btn" title="Phone">📱</a>
+        <a href="https://linkedin.com" target="_blank" class="social-btn" title="LinkedIn">💼</a>
+        <a href="https://github.com/" target="_blank" class="social-btn" title="GitHub">⚡</a>
+      </div>
+      <p class="footer-copy">
+        © 2025 <span>Safeek Mohammed Shahad</span>. All systems operational.
+        <br>Designed with precision. Built with passion.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="script.js"></script>
+  <script src="terminal.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="voice.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
